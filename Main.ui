@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>750</width>
+    <height>650</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Айсберг Антивирус</string>
+  </property>
+  <property name="styleSheet">
+   <string>
+ QMainWindow { background-color: #F0F4F8; }
+ QLabel { color: #102A43; font-family: 'Segoe UI'; font-size: 10pt; font-weight: bold; }
+ QTabWidget::pane { border: 1px solid #888888; background: #FFFFFF; }
+ QTabBar::tab { background: #E1E8F0; border: 1px solid #888888; padding: 8px 20px; color: #102A43; font-family: 'Segoe UI'; font-weight: bold; }
+ QTabBar::tab:selected { background: #FFFFFF; border-bottom-color: #FFFFFF; }
+ QTextBrowser, QTableWidget { background-color: #FFFFFF; border: 1px solid #888888; color: #102A43; font-family: 'Segoe UI'; font-size: 10pt; }
+ QCheckBox { color: #102A43; font-family: 'Segoe UI'; font-size: 10pt; padding: 5px; }
+ QPushButton { background-color: #0078D4; color: white; border: 1px solid #005A9E; padding: 8px 16px; font-family: 'Segoe UI'; font-size: 10pt; font-weight: bold; }
+ QPushButton:hover { background-color: #005A9E; }
+ QPushButton#btn_open_profile { background-color: #E1E8F0; color: #102A43; border: 1px solid #888888; }
+ QPushButton#btn_open_profile:hover { background-color: #D1D9E0; }
+ QHeaderView::section { background-color: #E1E8F0; border: 1px solid #888888; padding: 4px; font-weight: bold; }
+ </string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <property name="spacing">
+     <number>10</number>
+    </property>
+    <property name="leftMargin">
+     <number>15</number>
+    </property>
+    <property name="topMargin">
+     <number>15</number>
+    </property>
+    <property name="rightMargin">
+     <number>15</number>
+    </property>
+    <property name="bottomMargin">
+     <number>15</number>
+    </property>
+    <item>
+     <layout class="QHBoxLayout" name="header_layout">
+      <item>
+       <widget class="QLabel" name="label_logo">
+        <property name="font">
+         <font>
+          <family>Segoe Script</family>
+          <pointsize>25</pointsize>
+          <italic>false</italic>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font: 700 25pt &quot;Segoe Script&quot;;
+color: rgb(0, 0, 127);</string>
+        </property>
+        <property name="text">
+         <string>Iceberg antivirus</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Orientation::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btn_open_profile">
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(85, 85, 255);
+color: rgb(255, 255, 255);
+font: 12pt &quot;Franklin Gothic&quot;;</string>
+        </property>
+        <property name="text">
+         <string>⚙ Настройки</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="styleSheet">
+       <string notr="true">color: rgb(0, 85, 127);
+font: 12pt &quot;Franklin Gothic&quot;;</string>
+      </property>
+      <property name="currentIndex">
+       <number>1</number>
+      </property>
+      <widget class="QWidget" name="tab_scanner">
+       <attribute name="title">
+        <string>Сканер</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_2">
+        <item>
+         <widget class="QPushButton" name="btn_select_file">
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(85, 85, 255);
+color: rgb(255, 255, 255);
+font: 12pt &quot;Franklin Gothic&quot;;</string>
+          </property>
+          <property name="text">
+           <string>Выбрать файл для проверки</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_file_path">
+          <property name="text">
+           <string>Файл не выбран</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="groupBox_algorithms">
+          <property name="enabled">
+           <bool>true</bool>
+          </property>
+          <property name="title">
+           <string>Алгоритмы проверки</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_algorithms">
+           <item row="0" column="0">
+            <widget class="QCheckBox" name="cb_general">
+             <property name="text">
+              <string>Общая проверка</string>
+             </property>
+             <property name="checked">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <spacer name="spacer_1">
+             <property name="orientation">
+              <enum>Qt::Orientation::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item row="0" column="2">
+            <widget class="QLabel" name="label_desc_general">
+             <property name="text">
+              <string>Размер и структура</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QCheckBox" name="cb_suspicious">
+             <property name="text">
+              <string>Проверка расширений</string>
+             </property>
+             <property name="checked">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <spacer name="spacer_2">
+             <property name="orientation">
+              <enum>Qt::Orientation::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item row="1" column="2">
+            <widget class="QLabel" name="label_desc_suspicious">
+             <property name="text">
+              <string>Расширение файла</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="0">
+            <widget class="QCheckBox" name="cb_eof">
+             <property name="text">
+              <string>Проверка EOF</string>
+             </property>
+             <property name="checked">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="1">
+            <spacer name="spacer_3">
+             <property name="orientation">
+              <enum>Qt::Orientation::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item row="2" column="2">
+            <widget class="QLabel" name="label_desc_eof">
+             <property name="text">
+              <string>Вредоносный конец файла</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="0">
+            <widget class="QCheckBox" name="cb_exif">
+             <property name="text">
+              <string>Анализ EXIF</string>
+             </property>
+             <property name="checked">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="1">
+            <spacer name="spacer_4">
+             <property name="orientation">
+              <enum>Qt::Orientation::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item row="3" column="2">
+            <widget class="QLabel" name="label_desc_exif">
+             <property name="text">
+              <string>Анализ метаданных</string>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="0">
+            <widget class="QCheckBox" name="cb_virustotal">
+             <property name="text">
+              <string>VirusTotal</string>
+             </property>
+             <property name="checked">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="1">
+            <spacer name="spacer_5">
+             <property name="orientation">
+              <enum>Qt::Orientation::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item row="4" column="2">
+            <widget class="QLabel" name="label_desc_vt">
+             <property name="text">
+              <string>Облачное сканирование</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btn_start_scan">
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(85, 85, 255);
+color: rgb(255, 255, 255);
+font: 12pt &quot;Franklin Gothic&quot;;</string>
+          </property>
+          <property name="text">
+           <string>Начать проверку</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QTextBrowser" name="textBrowser_report">
+          <property name="placeholderText">
+           <string>Здесь будет подробный отчет</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btn_save_txt">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(85, 85, 255);
+color: rgb(255, 255, 255);
+font: 12pt &quot;Franklin Gothic&quot;;</string>
+          </property>
+          <property name="text">
+           <string>Сохранить отчет в TXT</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_history">
+       <attribute name="title">
+        <string>История проверок</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_4">
+        <item>
+         <widget class="QTableWidget" name="table_history">
+          <property name="styleSheet">
+           <string notr="true">color: rgb(0, 85, 127);
+font: 12pt &quot;Franklin Gothic&quot;;</string>
+          </property>
+          <property name="editTriggers">
+           <set>QAbstractItemView::EditTrigger::NoEditTriggers</set>
+          </property>
+          <property name="selectionBehavior">
+           <enum>QAbstractItemView::SelectionBehavior::SelectRows</enum>
+          </property>
+          <column>
+           <property name="text">
+            <string>Дата</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Имя файла</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Статус</string>
+           </property>
+          </column>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

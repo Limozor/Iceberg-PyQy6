@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ProfileWindow</class>
+ <widget class="QMainWindow" name="ProfileWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>500</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Настройки профиля</string>
+  </property>
+  <property name="styleSheet">
+   <string>
+    QMainWindow { background-color: #F0F4F8; }
+    QLabel { color: #102A43; font-family: 'Segoe UI'; font-size: 11pt; font-weight: bold; }
+    QLineEdit, QTextEdit, QComboBox {
+        background-color: #FFFFFF;
+        border: 1px solid #888888;
+        padding: 6px;
+        color: #102A43;
+        font-family: 'Segoe UI'; font-size: 10pt;
+    }
+    QPushButton {
+        background-color: #0078D4;
+        color: white;
+        border: 1px solid #005A9E;
+        padding: 8px 16px;
+        font-family: 'Segoe UI'; font-size: 10pt; font-weight: bold;
+    }
+    QPushButton:hover { background-color: #005A9E; }
+    QPushButton#btn_delete_data {
+        background-color: #D13438;
+        border: 1px solid #A80000;
+    }
+    QPushButton#btn_delete_data:hover {
+        background-color: #A80000;
+    }
+   </string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="main_layout">
+    <property name="spacing">
+     <number>15</number>
+    </property>
+    <property name="leftMargin">
+     <number>30</number>
+    </property>
+    <property name="topMargin">
+     <number>30</number>
+    </property>
+    <property name="rightMargin">
+     <number>30</number>
+    </property>
+    <property name="bottomMargin">
+     <number>30</number>
+    </property>
+    <item>
+     <layout class="QHBoxLayout" name="avatar_layout">
+      <item>
+       <spacer name="horizontalSpacer_left">
+        <property name="orientation">
+         <enum>Qt::Orientation::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>0</width>
+          <height>0</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="avatar_vbox">
+        <item>
+         <widget class="QLabel" name="label_avatar">
+          <property name="minimumSize">
+           <size>
+            <width>100</width>
+            <height>100</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string>background-color: #E1E8F0; border: 1px solid #888888; color: #829AB1; text-align: center;</string>
+          </property>
+          <property name="text">
+           <string>ФОТО</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignmentFlag::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btn_change_avatar">
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(85, 85, 255);
+color: rgb(255, 255, 255);
+font: 12pt &quot;Franklin Gothic&quot;;</string>
+          </property>
+          <property name="text">
+           <string>Загрузить фото</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_right">
+        <property name="orientation">
+         <enum>Qt::Orientation::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>0</width>
+          <height>0</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <widget class="QLineEdit" name="lineEdit_name">
+      <property name="placeholderText">
+       <string>ИМЯ</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLineEdit" name="lineEdit_second_name">
+      <property name="placeholderText">
+       <string>ФАМИЛИЯ</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QComboBox" name="comboBox_gender">
+      <item>
+       <property name="text">
+        <string>Выберите ваш пол</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Мужской</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Женский</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Не знаю</string>
+       </property>
+      </item>
+     </widget>
+    </item>
+    <item>
+     <widget class="QTextEdit" name="textEdit_desc_2">
+      <property name="placeholderText">
+       <string>Здесь можно написать какую-то интересную инфу о себе</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="btn_save_settings">
+      <property name="styleSheet">
+       <string notr="true"> </string>
+      </property>
+      <property name="text">
+       <string>Сохранить настройки</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <spacer name="verticalSpacer_bottom">
+      <property name="orientation">
+       <enum>Qt::Orientation::Vertical</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>40</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item>
+     <widget class="QPushButton" name="btn_delete_data">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 0, 0);
+color: rgb(255, 255, 255);
+font: 12pt &quot;Franklin Gothic&quot;;</string>
+      </property>
+      <property name="text">
+       <string>УДАЛИТЬ ВСЕ ДАННЫЕ</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
