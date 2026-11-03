@@ -17,7 +17,7 @@ NORMAL_TAGS = {
     "SubsecTimeOriginal", "SubsecTimeDigitized", "OffsetTimeOriginal", "34965",
     "DateTimeDigitized", "SensingMethod", "34974", "34975", "ExposureProgram",
     "ExposureMode", "SensitivityType", "ISOSpeed", "FocalLengthIn35mmFilm",
-    "42593", "MakerNote" "39424", "34979", "34970", "39321", "34973", "34965",
+    "42593", "MakerNote", "39424", "34979", "34970", "39321", "34973", "34965",
     "34974", "34975", "42593"
 }
 

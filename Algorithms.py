@@ -10,6 +10,7 @@ def Check_General(path):
     if os.path.getsize(path) == 0:
         report[1] = True
         report.append("Файл пустой попробуйте отправить этот файл снова или отправьте другой")
+        return report
 
     # Проверяем формат
     parser = createParser(path)
@@ -17,16 +18,18 @@ def Check_General(path):
     if parser is None:
         report[1] = True
         report.append("Формат файла не определён, проверьте файл и попробуйте снова")
+        return report
+
 
     # Проверяем структуру файла
-    try:
-        for _ in parser:
-            pass
+    with parser:
+        try:
+            for _ in parser:
+                pass
 
-    except Exception:
-        report[0] = True
-        report.append("Файл повреждён")
-
+        except Exception:
+            report[0] = True
+            report.append("Файл повреждён")
     return report
 
 

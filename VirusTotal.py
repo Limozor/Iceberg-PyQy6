@@ -4,7 +4,7 @@ from INFO import VirusTotal_API
 
 
 class VirusTotalScanner:
-    def init(self, api_key):
+    def __init__(self, api_key):
         self.base_url = "https://www.virustotal.com/api/v3"
         self.headers = {"x-apikey": api_key}
 
